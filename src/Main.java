@@ -1,4 +1,5 @@
 import com.aluracursos.screenmatch.modelos.Movie;
+import com.aluracursos.screenmatch.modelos.Serie;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,12 +17,13 @@ public class Main {
         System.out.println(myMovie.getTotalEvaluations());
         System.out.println(myMovie.showMedia());
 
-//        com.aluracursos.screenmatch.modelos.Movie otherMovie = new com.aluracursos.screenmatch.modelos.Movie();
-//        otherMovie.name = "matrix";
-//        otherMovie.releaseDate = 1998;
-//        otherMovie.minutesDurations = 180;
-//
-//        otherMovie.mesageTechnicalSheet();
+        Serie casaDragon = new Serie();
+        casaDragon.setName("La casa del Dragon");
+        casaDragon.setReleaseDate(2022);
+        casaDragon.setTemporadas(1);
+        casaDragon.setEpisodeOfTemp(10);
+        casaDragon.setMinutesOfEpisode(50);
+        casaDragon.mesageTechnicalSheet();
 
     }
 }
