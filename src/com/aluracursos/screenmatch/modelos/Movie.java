@@ -1,6 +1,8 @@
 package com.aluracursos.screenmatch.modelos;
 
-public class Movie extends Tittle{
+import com.aluracursos.screenmatch.calculos.Clasification;
+
+public class Movie extends Tittle implements Clasification {
     private String director;
 
     public String getDirector() {
@@ -9,5 +11,10 @@ public class Movie extends Tittle{
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    @Override
+    public int getClasification() {
+        return (int) showMedia() / 2;
     }
 }

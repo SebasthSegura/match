@@ -54,6 +54,7 @@ public class Tittle {
         plusEvaluations += note;
         totalEvaluations ++;
     }
+    //calcula la media
     public double showMedia(){
         return plusEvaluations / totalEvaluations;
     }
