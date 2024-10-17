@@ -1,7 +1,7 @@
 package com.aluracursos.screenmatch.calculos;
 
 public class RecomendsFilter {
-    void Filter(Clasification clasificacion){
+    public void Filter(Clasification clasificacion){
         if (clasificacion.getClasification() >= 4){
             System.out.println("Muy bien evaluado en el momento");
         } else if (clasificacion.getClasification() == 2) {

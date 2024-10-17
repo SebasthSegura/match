@@ -10,6 +10,14 @@ public class Episode implements Clasification {
     private Serie serie;
     private int totalVisualization;
 
+    public int getTotalVisualization() {
+        return totalVisualization;
+    }
+
+    public void setTotalVisualization(int totalVisualization) {
+        this.totalVisualization = totalVisualization;
+    }
+
     public int getNumber() {
         return number;
     }

@@ -1,4 +1,6 @@
+import com.aluracursos.screenmatch.calculos.RecomendsFilter;
 import com.aluracursos.screenmatch.calculos.TimeCalculator;
+import com.aluracursos.screenmatch.modelos.Episode;
 import com.aluracursos.screenmatch.modelos.Movie;
 import com.aluracursos.screenmatch.modelos.Serie;
 
@@ -39,5 +41,16 @@ public class Main {
         System.out.println("tiempo necesario para ver todos tus titulos seleccionados: "
                 + calculator.getTotalTime() + " minutos");
 
+        //usamos la clase RecomendsFilter para dar un mensaje en la clase principal
+        RecomendsFilter recomendsFilter = new RecomendsFilter();
+        recomendsFilter.Filter(myMovie);
+
+        Episode episode = new Episode();
+        episode.setNumber(1);
+        episode.setName("La casa de Targaryen");
+        episode.setSerie(casaDragon);
+        episode.setTotalVisualization(300);
+
+        recomendsFilter.Filter(episode);
     }
 }
