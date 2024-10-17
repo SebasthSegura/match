@@ -1,3 +1,4 @@
+import com.aluracursos.screenmatch.calculos.TimeCalculator;
 import com.aluracursos.screenmatch.modelos.Movie;
 import com.aluracursos.screenmatch.modelos.Serie;
 
@@ -24,6 +25,11 @@ public class Main {
         casaDragon.setEpisodeOfTemp(10);
         casaDragon.setMinutesOfEpisode(50);
         casaDragon.mesageTechnicalSheet();
+
+        TimeCalculator calculator = new TimeCalculator();
+        calculator.include(myMovie);
+        calculator.include(casaDragon);
+        System.out.println(calculator.getTotalTime());
 
     }
 }

@@ -5,6 +5,8 @@ public class Serie extends Tittle {
     private int episodeOfTemp;
     private int minutesOfEpisode;
 
+    //creamos un metodo que sobre escriba el metodo de otra clase para poder usarlo
+    //mediante la herencia
     @Override
     public double getMinutesDurations() {
         return temporadas * episodeOfTemp * minutesOfEpisode;
