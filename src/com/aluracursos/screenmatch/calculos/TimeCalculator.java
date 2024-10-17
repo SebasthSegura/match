@@ -2,6 +2,7 @@ package com.aluracursos.screenmatch.calculos;
 
 import com.aluracursos.screenmatch.modelos.Movie;
 import com.aluracursos.screenmatch.modelos.Serie;
+import com.aluracursos.screenmatch.modelos.Tittle;
 
 public class TimeCalculator {
     private int totalTime;
@@ -13,11 +14,8 @@ public class TimeCalculator {
 
     //creamos un metodo para calcular el tiempo total sumando a una
     //variable "totaltime" todos los minutos de duracion de cada pelicula
-    public void include(Movie movie){
-        totalTime += movie.getMinutesDurations();
+    public void include(Tittle titulo){
+        this.totalTime += titulo.getMinutesDurations();
     }
 
-    public void include(Serie serie){
-        totalTime += serie.getMinutesDurations();
-    }
 }
