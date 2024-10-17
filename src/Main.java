@@ -26,10 +26,18 @@ public class Main {
         casaDragon.setMinutesOfEpisode(50);
         casaDragon.mesageTechnicalSheet();
 
+        Movie otherMovie = new Movie();
+        otherMovie.setName("matrix");
+        otherMovie.setReleaseDate(1998);
+        otherMovie.setMinutesDurations(180);
+
         TimeCalculator calculator = new TimeCalculator();
         calculator.include(myMovie);
         calculator.include(casaDragon);
-        System.out.println(calculator.getTotalTime());
+        calculator.include(otherMovie);
+        System.out.println("");
+        System.out.println("tiempo necesario para ver todos tus titulos seleccionados: "
+                + calculator.getTotalTime() + " minutos");
 
     }
 }
