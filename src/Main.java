@@ -4,6 +4,8 @@ import com.aluracursos.screenmatch.modelos.Episode;
 import com.aluracursos.screenmatch.modelos.Movie;
 import com.aluracursos.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         //creamos una pelicula nueva llamandola y dando un nombre propio
@@ -51,6 +53,31 @@ public class Main {
         episode.setSerie(casaDragon);
         episode.setTotalVisualization(300);
 
+        //usamos el metodo filtrar
         recomendsFilter.Filter(episode);
+
+        /*usamos var para indicar que estamos iniciando
+         una variable de tipo global que va a ser un objeto de tipo Movie
+         de este modo newMovie quedara registrada sin tanta referencia y mas simple*/
+        var newMovie = new Movie();
+        newMovie.setName("El señor de los anillo");
+        newMovie.setReleaseDate(2001);
+        newMovie.setMinutesDurations(180);
+
+        /*creamos un array para poder ver el comportamiento de los arrays y entenderlo.
+         * de igual modo en el parametro principal del arraylist el tipo de dato
+         * especificado a recibir es un dato de tipo Movie ya que esta indicado entre <>*/
+        ArrayList<Movie> listMovie = new ArrayList<>();
+
+        //agregamos los objetos de Movie al arraylist
+        listMovie.add(myMovie);
+        listMovie.add(otherMovie);
+        listMovie.add(newMovie);
+
+        //imprimimos el tamaño del array en un "sout"
+        System.out.println("El tamaño de la lista de pelicula es: " + listMovie.size());
+
+        //ahora imprimimos en pantalla el primer item de la lista
+        System.out.println("La primera pelicula de la lista es: " + listMovie.get(0).getName());
     }
 }
