@@ -9,6 +9,11 @@ public class Tittle {
     private double plusEvaluations;
     private int totalEvaluations;
 
+    public Tittle(String name, int releaseDate) {
+        this.name = name;
+        this.releaseDate = releaseDate;
+    }
+
     //usamos las estrcturas generativas setter para permitir el uso de las variables
     public void setName(String name) {
         this.name = name;
@@ -58,4 +63,6 @@ public class Tittle {
     public double showMedia(){
         return plusEvaluations / totalEvaluations;
     }
+
+
 }

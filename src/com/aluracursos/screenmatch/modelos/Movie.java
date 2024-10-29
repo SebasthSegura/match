@@ -5,6 +5,11 @@ import com.aluracursos.screenmatch.calculos.Clasification;
 public class Movie extends Tittle implements Clasification {
     private String director;
 
+
+    public Movie(String name, int releaseDate) {
+        super(name, releaseDate);
+    }
+
     public String getDirector() {
         return director;
     }
@@ -16,5 +21,10 @@ public class Movie extends Tittle implements Clasification {
     @Override
     public int getClasification() {
         return (int) showMedia() / 2;
+    }
+
+    @Override
+    public String toString() {
+        return "Pelicula " + this.getName() + " (" + getReleaseDate() + ")";
     }
 }

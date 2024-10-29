@@ -9,9 +9,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         //creamos una pelicula nueva llamandola y dando un nombre propio
-        Movie myMovie = new Movie();
-        myMovie.setName("encanto");
-        myMovie.setReleaseDate(2021);
+        Movie myMovie = new Movie("encanto", 2021);
         myMovie.setMinutesDurations(125);
 
         myMovie.mesageTechnicalSheet();
@@ -22,17 +20,13 @@ public class Main {
         System.out.println(myMovie.getTotalEvaluations());
         System.out.println(myMovie.showMedia());
 
-        Serie casaDragon = new Serie();
-        casaDragon.setName("La casa del Dragon");
-        casaDragon.setReleaseDate(2022);
+        Serie casaDragon = new Serie("La casa del Dragon", 2022);
         casaDragon.setTemporadas(1);
         casaDragon.setEpisodeOfTemp(10);
         casaDragon.setMinutesOfEpisode(50);
         casaDragon.mesageTechnicalSheet();
 
-        Movie otherMovie = new Movie();
-        otherMovie.setName("matrix");
-        otherMovie.setReleaseDate(1998);
+        Movie otherMovie = new Movie("matrix", 1998);
         otherMovie.setMinutesDurations(180);
 
         TimeCalculator calculator = new TimeCalculator();
@@ -58,10 +52,8 @@ public class Main {
 
         /*usamos var para indicar que estamos iniciando
          una variable de tipo global que va a ser un objeto de tipo Movie
-         de este modo newMovie quedara registrada sin tanta referencia y mas simple*/
-        var newMovie = new Movie();
-        newMovie.setName("El señor de los anillo");
-        newMovie.setReleaseDate(2001);
+         de este modo newMovie quedara registrada sin tanta redundancia y mas simple*/
+        var newMovie = new Movie("El señor de los anillo", 2001);
         newMovie.setMinutesDurations(180);
 
         /*creamos un array para poder ver el comportamiento de los arrays y entenderlo.
@@ -79,5 +71,9 @@ public class Main {
 
         //ahora imprimimos en pantalla el primer item de la lista
         System.out.println("La primera pelicula de la lista es: " + listMovie.get(0).getName());
+
+        System.out.println(listMovie);
+
+        System.out.println("toString de la pelicula:" + listMovie.get(0).toString());
     }
 }

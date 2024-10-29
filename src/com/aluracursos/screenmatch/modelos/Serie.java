@@ -5,6 +5,10 @@ public class Serie extends Tittle {
     private int episodeOfTemp;
     private int minutesOfEpisode;
 
+    public Serie(String name, int releaseDate) {
+        super(name, releaseDate);
+    }
+
     //creamos un metodo que sobre escriba el metodo de otra clase para poder usarlo
     //mediante la herencia
     @Override
