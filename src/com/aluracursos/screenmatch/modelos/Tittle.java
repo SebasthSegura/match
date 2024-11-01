@@ -9,6 +9,10 @@ public class Tittle {
     private double plusEvaluations;
     private int totalEvaluations;
 
+    /*aqui se optimiza el codigo para que se ingrese de manera directa el tipo de dato
+    string nombre y el int fecha de estreno cada que creamos un nuevo objeto de tipo
+    titulo
+    */
     public Tittle(String name, int releaseDate) {
         this.name = name;
         this.releaseDate = releaseDate;

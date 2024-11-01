@@ -77,5 +77,6 @@ public class Main {
         System.out.println(listMovie);
 
         System.out.println("toString de la pelicula:" + listMovie.get(0).toString());
+
     }
 }

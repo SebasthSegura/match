@@ -10,9 +10,12 @@ public class PrincipalWithArrays {
     public static void main(String[] args) {
 
         Movie myMovie = new Movie("encanto", 2021);
+        myMovie.evaluation(9);
         Serie casaDragon = new Serie("La casa del Dragon", 2022);
         Movie otherMovie = new Movie("matrix", 1998);
+        otherMovie.evaluation(9);
         var newMovie = new Movie("El señor de los anillo", 2001);
+        newMovie.evaluation(9);
 
         ArrayList<Tittle> list = new ArrayList<>();
 
@@ -28,8 +31,9 @@ public class PrincipalWithArrays {
 
         for (Tittle item:list) {
             System.out.println(item.getName());
-            Movie movie = (Movie) item;
-            System.out.println(movie.getClasification());
+            if (item instanceof Movie movie && movie.getClasification() > 2) {
+                System.out.println("Clasificacion: " + movie.getClasification());
+            }
         }
     }
 }
