@@ -5,6 +5,8 @@ import com.aluracursos.screenmatch.modelos.Serie;
 import com.aluracursos.screenmatch.modelos.Tittle;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalWithArrays {
     public static void main(String[] args) {
@@ -35,5 +37,26 @@ public class PrincipalWithArrays {
                 System.out.println("Clasificacion: " + movie.getClasification());
             }
         }
+
+        ArrayList<String> actorList = new ArrayList<>();
+        actorList.add("Penelope Cruz");
+        actorList.add("Antonio Banderas");
+        actorList.add("Ricardo Darin");
+
+        /*
+        usamos el Collections.sort para ordenar ya sea listas que contengas cadenas de texto o
+        strings
+        */
+        Collections.sort(actorList);
+        System.out.println("Lista de Artistas ordenada: " + actorList);
+
+        Collections.sort(list);
+        System.out.println("Lista de Peliculas ordenadas: " + list);
+
+        /*
+        usamos un Comparator para comparar listas al igual que Comparable
+         */
+        list.sort(Comparator.comparing(Tittle::getReleaseDate));
+        System.out.println("Lista de peliculas por fecha: " + list);
     }
 }

@@ -39,4 +39,13 @@ public class Serie extends Tittle {
     public void setMinutesOfEpisode(int minutesOfEpisode) {
         this.minutesOfEpisode = minutesOfEpisode;
     }
+
+    /*
+    sobreescribimos el metodo toString para que las series no se muestren
+    como referencia sino con su nombre y fecha de lanzamiento como se hizo en movie
+     */
+    @Override
+    public String toString() {
+        return "serie: " + this.getName() + " (" + this.getReleaseDate() + ")";
+    }
 }

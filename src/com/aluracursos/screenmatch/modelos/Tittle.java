@@ -1,6 +1,10 @@
 package com.aluracursos.screenmatch.modelos;
 
-public class Tittle {
+/*
+para poder usar o comparar los nombres de los titulos con la funcion Comparable se necesita
+implementar los metodos y como se va a comparar
+*/
+public class Tittle implements Comparable<Tittle> {
     //creamos las varables de nuestra clase padre que heredaran las hijas
     private String name;
     private int releaseDate;
@@ -69,4 +73,12 @@ public class Tittle {
     }
 
 
+    /*
+    aqui podemos observar como usar el metodo compareTo para comparar
+    los nombres de los titulos(objeto) que se hayan almacenado en la clase titulo
+     */
+    @Override
+    public int compareTo(Tittle othertittle) {
+        return this.getName().compareTo(othertittle.getName());
+    }
 }
