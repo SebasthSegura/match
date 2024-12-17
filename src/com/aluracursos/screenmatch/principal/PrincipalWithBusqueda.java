@@ -1,5 +1,8 @@
 package com.aluracursos.screenmatch.principal;
 
+import com.aluracursos.screenmatch.modelos.Tittle;
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -35,8 +38,26 @@ public class PrincipalWithBusqueda {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
         /*
+        creamos una variable json para poder implementar los cambios con el jar Gson de
+        nuestro response.body que es nuestro json el cual sera modificado
+         */
+        String json = response.body();
+        /*
         imprimimos en pantalla la respuesta que nos dio el api
          */
-        System.out.println(response.body());
+        System.out.println(json);
+
+        /*
+        usamos Gson para poder modificar el archivo json que vamos a recibir
+        de nuestra consulta del api como cadena de json
+         */
+        Gson gson = new Gson();
+
+        /*
+        usamos nuestro paquete Tittle para poder usarlo con la biblioteca
+        gson y modificar nuestra respuesta del api que esta en la variable json
+         */
+        Tittle myTittle = gson.fromJson(json, Tittle.class);
+        System.out.println(myTittle);
     }
 }

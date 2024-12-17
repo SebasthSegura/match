@@ -1,12 +1,21 @@
 package com.aluracursos.screenmatch.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 /*
 para poder usar o comparar los nombres de los titulos con la funcion Comparable se necesita
 implementar los metodos y como se va a comparar
 */
 public class Tittle implements Comparable<Tittle> {
+
+    /*
+    usamos @Serial para poder comunicar que la variable va a tomar como parametro el
+    nombre de la variable de json y su contenido
+     */
+    @SerializedName("Title")
     //creamos las varables de nuestra clase padre que heredaran las hijas
     private String name;
+    @SerializedName("Year")
     private int releaseDate;
     private int minutesDurations;
     private boolean userPlan;
@@ -80,5 +89,15 @@ public class Tittle implements Comparable<Tittle> {
     @Override
     public int compareTo(Tittle othertittle) {
         return this.getName().compareTo(othertittle.getName());
+    }
+
+    /*
+    modificamos el toString de las variables name y releasedate
+    para cuando sea solicitada por el usuario en la busqueda aparezca clasificada
+     */
+    @Override
+    public String toString() {
+        return "nombre = '" + name + '\'' +
+                ", fecha de lanzamiento = " + releaseDate;
     }
 }
