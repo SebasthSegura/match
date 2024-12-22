@@ -31,6 +31,19 @@ public class Tittle implements Comparable<Tittle> {
         this.releaseDate = releaseDate;
     }
 
+    /*
+    usamos un constructor para que las variables del TittleOmdb las cuales estan siendo
+    recolectadas por el camelcase se transfieran a nuestra clase Tittle
+     */
+    public Tittle(TittleOmdb myTittleOmdb) {
+        /*
+        name va a ser igual a myTittleOmdb que contiene la variable title
+         */
+        this.name = myTittleOmdb.title();
+        this.releaseDate = Integer.valueOf(myTittleOmdb.year());
+        this.minutesDurations = Integer.valueOf(myTittleOmdb.runtime());
+    }
+
     //usamos las estrcturas generativas setter para permitir el uso de las variables
     public void setName(String name) {
         this.name = name;
