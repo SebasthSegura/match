@@ -41,7 +41,7 @@ public class Tittle implements Comparable<Tittle> {
          */
         this.name = myTittleOmdb.title();
         this.releaseDate = Integer.valueOf(myTittleOmdb.year());
-        this.minutesDurations = Integer.valueOf(myTittleOmdb.runtime());
+        this.minutesDurations = Integer.valueOf(myTittleOmdb.runtime().substring(0,2));
     }
 
     //usamos las estrcturas generativas setter para permitir el uso de las variables
@@ -111,6 +111,7 @@ public class Tittle implements Comparable<Tittle> {
     @Override
     public String toString() {
         return "nombre = '" + name + '\'' +
-                ", fecha de lanzamiento = " + releaseDate;
+                ", fecha de lanzamiento = " + releaseDate +
+                ", Duracion = " + minutesDurations + " min";
     }
 }

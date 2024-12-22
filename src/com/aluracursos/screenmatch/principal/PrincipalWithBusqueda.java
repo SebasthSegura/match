@@ -62,6 +62,19 @@ public class PrincipalWithBusqueda {
          */
         TittleOmdb myTittleOmdb = gson.fromJson(json, TittleOmdb.class);
         System.out.println(myTittleOmdb);
-        Tittle myTittle = new Tittle(myTittleOmdb);
+
+        /*
+        usamos el try and catch para decir a nuestro codigo que trate de ejecutar algo
+        dependiendo del comportamiento de las excepciones, en dado caso
+        se ejecutara el catch mostrando con e de exception.
+         */
+        try {
+            Tittle myTittle = new Tittle(myTittleOmdb);
+            System.out.println(myTittle);
+        } catch (NumberFormatException e) {
+            System.out.println("Ocurrio un error");
+            System.out.println(e.getMessage());
+        }
+        System.out.println("Finalizo la ejecicion del codigo");
     }
 }
