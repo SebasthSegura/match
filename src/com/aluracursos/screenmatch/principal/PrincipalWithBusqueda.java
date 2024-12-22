@@ -1,7 +1,10 @@
 package com.aluracursos.screenmatch.principal;
 
 import com.aluracursos.screenmatch.modelos.Tittle;
+import com.aluracursos.screenmatch.modelos.TittleOmdb;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
@@ -51,13 +54,14 @@ public class PrincipalWithBusqueda {
         usamos Gson para poder modificar el archivo json que vamos a recibir
         de nuestra consulta del api como cadena de json
          */
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();;
 
         /*
         usamos nuestro paquete Tittle para poder usarlo con la biblioteca
         gson y modificar nuestra respuesta del api que esta en la variable json
          */
-        Tittle myTittle = gson.fromJson(json, Tittle.class);
-        System.out.println(myTittle);
+        TittleOmdb myTittleOmdb = gson.fromJson(json, TittleOmdb.class);
+        System.out.println(myTittleOmdb);
+        Tittle myTittle = new Tittle(myTittleOmdb);
     }
 }
