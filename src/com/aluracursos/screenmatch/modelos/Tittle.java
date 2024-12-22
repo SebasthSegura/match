@@ -1,5 +1,6 @@
 package com.aluracursos.screenmatch.modelos;
 
+import com.aluracursos.screenmatch.exceptions.ErrorConverRuntimeException;
 import com.google.gson.annotations.SerializedName;
 
 /*
@@ -41,7 +42,11 @@ public class Tittle implements Comparable<Tittle> {
          */
         this.name = myTittleOmdb.title();
         this.releaseDate = Integer.valueOf(myTittleOmdb.year());
-        this.minutesDurations = Integer.valueOf(myTittleOmdb.runtime().substring(0,2));
+        if (myTittleOmdb.runtime().contains("N/A")){
+            throw new ErrorConverRuntimeException("no pude convertir la duracion, " +
+                    "por que contiene un N/A");
+        }
+        this.minutesDurations = Integer.valueOf(myTittleOmdb.runtime().substring(0,3));
     }
 
     //usamos las estrcturas generativas setter para permitir el uso de las variables
