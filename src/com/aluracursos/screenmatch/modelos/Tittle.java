@@ -13,10 +13,8 @@ public class Tittle implements Comparable<Tittle> {
     usamos @Serial para poder comunicar que la variable va a tomar como parametro el
     nombre de la variable de json y su contenido
      */
-    @SerializedName("Title")
     //creamos las varables de nuestra clase padre que heredaran las hijas
     private String name;
-    @SerializedName("Year")
     private int releaseDate;
     private int minutesDurations;
     private boolean userPlan;
@@ -46,7 +44,7 @@ public class Tittle implements Comparable<Tittle> {
             throw new ErrorConverRuntimeException("no pude convertir la duracion, " +
                     "por que contiene un N/A");
         }
-        this.minutesDurations = Integer.valueOf(myTittleOmdb.runtime().substring(0,3));
+        this.minutesDurations = Integer.valueOf(myTittleOmdb.runtime().substring(0,2));
     }
 
     //usamos las estrcturas generativas setter para permitir el uso de las variables
@@ -115,8 +113,8 @@ public class Tittle implements Comparable<Tittle> {
      */
     @Override
     public String toString() {
-        return "nombre = '" + name + '\'' +
+        return "(nombre = '" + name + '\'' +
                 ", fecha de lanzamiento = " + releaseDate +
-                ", Duracion = " + minutesDurations + " min";
+                ", Duracion = " + minutesDurations + " min" + ")";
     }
 }
